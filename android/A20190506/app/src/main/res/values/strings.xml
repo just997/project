@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">A20190506</string>
+    <string name="usenamer">"用户名"</string>
+    <item type="id" name="tag_person"></item>
+    <item type="id" name="tag_other"></item>
+    <item type="id" name="tag_other1"></item>
+</resources>

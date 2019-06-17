@@ -1,0 +1,34 @@
+2019-06-16 19:57:20 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.zhiwuwang.com/baike/list-1712.html> (referer: None)
+Traceback (most recent call last):
+  File "c:\users\wyx72\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src/lxml/etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src/lxml/xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src/lxml/xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+lxml.etree.XPathEvalError: Invalid expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\wyx72\anaconda3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\users\wyx72\anaconda3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\users\wyx72\anaconda3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\users\wyx72\anaconda3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\users\wyx72\anaconda3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "C:\Users\wyx72\Documents\VSCode\python\This_spider\myspider\spiders\plant.py", line 31, in parse
+    item['herf'] = li.xpath(".//dev[@class='bk-list-title']@herf").extract()
+  File "c:\users\wyx72\anaconda3\lib\site-packages\parsel\selector.py", line 242, in xpath
+    six.reraise(ValueError, ValueError(msg), sys.exc_info()[2])
+  File "C:\Users\wyx72\AppData\Roaming\Python\Python37\site-packages\six.py", line 692, in reraise
+    raise value.with_traceback(tb)
+  File "c:\users\wyx72\anaconda3\lib\site-packages\parsel\selector.py", line 238, in xpath
+    **kwargs)
+  File "src/lxml/etree.pyx", line 1586, in lxml.etree._Element.xpath
+  File "src/lxml/xpath.pxi", line 307, in lxml.etree.XPathElementEvaluator.__call__
+  File "src/lxml/xpath.pxi", line 227, in lxml.etree._XPathEvaluatorBase._handle_result
+ValueError: XPath error: Invalid expression in .//dev[@class='bk-list-title']@herf

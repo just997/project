@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+</head>
+<body>
+    欢迎<h1>{{content}} {{user}}</h1>
+
+<ul>
+{% for k,v in d.items %}
+    {% if forloop.counter0|divisibleby:"2" %}
+    <li style="color: #1eac88">{{forloop.counter0}} {{k}} {{v}}</li>
+    {% else %}
+    <li style="color: #dd3f9b">{{forloop.counter0}} {{k}} {{v}}</li>
+    {% endif %}
+{% endfor %}
+</ul>
+<hr>
+
+<ul>
+{% for k,v in d.items %}
+    <li class='color:{{forloop.counter0|divisibleby:"2"|yesno:"odd, even"}}'>
+        {{forloop.counter0}} {{k}} {{v}}
+    </li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
